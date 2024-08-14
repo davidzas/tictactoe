@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DZ Tic Tac Toe</title>
+    <link rel="stylesheet" href="https://use.typekit.net/gfs6plr.css" />
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./firebase.js"></script>
+  </head>
+  <body class="bg-gray-900 text-white">
+    <header class="bg-green-400 text-gray-900 p-4">
+      <div class="container mx-auto flex justify-center items-center">
+        <h1 class="text-2xl font-bold">DavidZas Tic-Tac-Toe!</h1>
+      </div>
+    </header>
+    <main class="">
+      <div class="game">
+        <div class="game-board">
+          <div class="board-row">
+            <div class="board-tile" data-index="1"></div>
+            <div class="board-tile" data-index="2"></div>
+            <div class="board-tile" data-index="3"></div>
+          </div>
+          <div class="board-row">
+            <div class="board-tile" data-index="4"></div>
+            <div class="board-tile" data-index="5"></div>
+            <div class="board-tile" data-index="6"></div>
+          </div>
+          <div class="board-row">
+            <div class="board-tile" data-index="7"></div>
+            <div class="board-tile" data-index="8"></div>
+            <div class="board-tile" data-index="9"></div>
+          </div>
+        </div>
+        <div class="game-info mt-4">
+          <div class="status mb-4">
+            <p class="game-status text-lg font-semibold"></p>
+            <p class="player-turn text-lg font-semibold"></p>
+            <div id="onlineStatus">Is online: No</div>
+            <div id="onlineInfo"></div>
+          </div>
+          <div class="reset mb-4">
+            <button class="reset-button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Reset</button>
+          </div>
+          <div class="mb-4">
+            <button id="createOnlineGame" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+              Create Online Game
+            </button>
+          </div>
+          <div class="mb-4" id="onlineContent">
+            <h2 class="text-xl font-bold mb-2">Join Online game</h2>
+            <input type="text" id="gameId" class="bg-gray-800 border border-gray-700 p-2 rounded" placeholder="Game ID" />
+            <br />
+            <button id="joinOnlineGame" class="bg-teal-500 text-white font-bold py-2 px-4 rounded ml-2 hover-button-gg">Join</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./game.js"></script>
+  </body>
+</html>
